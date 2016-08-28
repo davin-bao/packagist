@@ -57,7 +57,13 @@
         <div class="row" id="package-list"></div>
     </div>
     <div class="jumbotron status">
-
+        <h3>Help</h3>
+        1. Run the command below in your project root path:
+        <pre>composer require "domain/images:dev-master"</pre>
+        2. and then:
+        <pre>composer install</pre>
+        3. Issue support
+        <br/>&nbsp;&nbsp;&nbsp;<a href="https://github.com/davin-bao/packagist">https://github.com/davin-bao/packagist</a>
     </div>
 </div>
 
