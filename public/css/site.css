@@ -1,0 +1,44 @@
+.site-header {
+    position: relative;
+    text-align: center;
+    background-color: #27AE60;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.jumbotron.package {
+    /*background-color: #d9edf7;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+}
+
+.jumbotron.status {
+    background-color: #d9edf7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.package .row .panel {
+    width: 49%;
+    padding: 5px;
+    margin: 2px;
+}
+
+.package .row .panel div {
+    margin: 10px;
+}
+
+.package .row .panel .panel-tags span {
+    margin: 2px;
+    float: left;
+}
+
+.package .row .panel dt {
+    width: 20%;
+}
+
+.package .row .panel dd {
+    width: 80%;
+    margin-left: 22%;
+}
