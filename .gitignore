@@ -15,3 +15,4 @@ bootstrap/cache/
 .rocketeer/
 packages.json
 .idea
+composer.lock
