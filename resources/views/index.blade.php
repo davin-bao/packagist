@@ -116,6 +116,7 @@
                 for(var key in data.rows){
                     var tagList = '';
                     var url = '';
+                    var ref = '';
                     var type = 'git';
                     for(var tag in data.rows[key]){
                         if(tag.indexOf('master') >=0){
@@ -126,6 +127,7 @@
 
                         type = data.rows[key][tag].source.type;
                         url = data.rows[key][tag].source.url;
+                        ref = data.rows[key][tag].source.reference;
                     }
                     self.packageListDom.append(
                             '<div class="panel panel-default pull-left">\
@@ -134,6 +136,7 @@
                             <dl class="dl-horizontal">\
                             <dt>TAGS: </dt><dd class="panel-tags">' + tagList + '</dd>\
                             <dt> URL: </dt><dd class="panel-url">'+ url + '</dd>\
+                            <dt> REF: </dt><dd class="panel-url">'+ ref + '</dd>\
                             </dl>\
                             </div>'
                     );
