@@ -117,6 +117,7 @@
                     var tagList = '';
                     var url = '';
                     var ref = '';
+                    var desc = '';
                     var type = 'git';
                     for(var tag in data.rows[key]){
                         if(tag.indexOf('master') >=0){
@@ -125,6 +126,7 @@
                             tagList += '<span class="label label-warning">' + tag + '</span>';
                         }
 
+                        desc = data.rows[key][tag].description;
                         type = data.rows[key][tag].source.type;
                         url = data.rows[key][tag].source.url;
                         ref = data.rows[key][tag].source.reference;
@@ -134,6 +136,7 @@
                             <span class="label label-info pull-right">' + type + '</span>\
                             <h4 class="panel-name">' + key + '</h4>\
                             <dl class="dl-horizontal">\
+                            <dt>DESC: </dt><dd class="panel-tags"><span data-toggle="tooltip" data-placement="top" title="' + desc + '">' + self.subString(desc, 50, '...') + ' </span></dd>\
                             <dt>TAGS: </dt><dd class="panel-tags">' + tagList + '</dd>\
                             <dt> URL: </dt><dd class="panel-url">'+ url + '</dd>\
                             <dt> REF: </dt><dd class="panel-url">'+ ref + '</dd>\
@@ -257,6 +260,37 @@
                 }
             }
             return theRequest;
+        },
+        subString: function (str, len, hasDot)
+        {
+            var newLength = 0;
+            var newStr = "";
+            var chineseRegex = /[^\x00-\xff]/g;
+            var singleChar = "";
+            var strLength = str.replace(chineseRegex,"**").length;
+            for(var i = 0;i < strLength;i++)
+            {
+                singleChar = str.charAt(i).toString();
+                if(singleChar.match(chineseRegex) != null)
+                {
+                    newLength += 2;
+                }
+                else
+                {
+                    newLength++;
+                }
+                if(newLength > len)
+                {
+                    break;
+                }
+                newStr += singleChar;
+            }
+
+            if(hasDot && strLength > len)
+            {
+                newStr += "...";
+            }
+            return newStr;
         }
     };
 

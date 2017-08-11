@@ -74,7 +74,7 @@ class Package
     public function create(){
         $packages = array();
 
-        $this->projects = GitLab::api('projects')->accessible();
+        $this->projects = GitLab::api('projects')->accessible(1, 9999);
         $this->repositories = GitLab::api('repositories');
 
         foreach($this->projects as $project){
