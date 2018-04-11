@@ -76,7 +76,7 @@
             "repositories": [
                 {
                 "type": "composer",
-                "url": "http://packagist.local.com"
+                "url": "https://packagist.xmisp.com"
                 },
                 ...
             ]
