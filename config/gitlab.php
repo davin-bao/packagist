@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'default' => 'Local',
+    'default' => 'Gitlab',
 
     /*
     |--------------------------------------------------------------------------
@@ -37,9 +37,9 @@ return [
 
     'connections' => [
 
-        'Local' => [
-            'token' => 'wyHczqs4m3Qmadxrx6it',
-            'base_url' => 'http://gitlab.local.com/api/v3/',
+        'Gitlab' => [
+            'token' => env('GITLAB_TOKEN', 'SomeRandomString'),
+            'base_url' => env('GITLAB_URL', 'SomeRandomString'),
         ],
 
     ],
