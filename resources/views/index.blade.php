@@ -84,7 +84,7 @@
     });
 
     var page = page || {};
-    var rootUri = (function(){ return 'http://' + location.host; })();
+    var rootUri = (function(){ return 'https://' + location.host; })();
 
     page = {
         repoListDom: $('#repo-list'),
