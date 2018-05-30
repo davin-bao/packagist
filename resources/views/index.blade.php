@@ -58,11 +58,35 @@
     </div>
     <div class="jumbotron status">
         <h3>Help</h3>
-        1. Run the command below in your project root path:
+        1. Configurate composer.json below in your project root path like below:
+        <pre>
+        {
+            "name": "laravel/laravel",
+            "description": "The Laravel Framework.",
+            "keywords": ["framework", "laravel"],
+            "license": "MIT",
+            "require": {
+                "php": ">=5.5.9",
+                "laravel/framework": "5.1.*",
+                "dj/component": "dev-master",
+                ...
+            },
+            ...
+            ...
+            "repositories": [
+                {
+                "type": "composer",
+                "url": "http://packagist.local.com"
+                },
+                ...
+            ]
+        }
+        </pre>
+        2. Run the command below in your project root path:
         <pre>composer require "domain/images:dev-master"</pre>
-        2. and then:
+        3. and then:
         <pre>composer install</pre>
-        3. Issue support
+        4. Issue support
         <br/>&nbsp;&nbsp;&nbsp;<a href="https://github.com/davin-bao/packagist">https://github.com/davin-bao/packagist</a>
     </div>
 </div>
@@ -84,7 +108,7 @@
     });
 
     var page = page || {};
-    var rootUri = (function(){ return 'https://' + location.host; })();
+    var rootUri = (function(){ return 'http://' + location.host; })();
 
     page = {
         repoListDom: $('#repo-list'),

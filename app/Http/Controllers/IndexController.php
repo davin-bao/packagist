@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Models\Package;
-use GitLab;
+use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -27,9 +27,7 @@ class IndexController extends BaseController
     }
 
     public function getPackages(){
-        header('Content-Type: application/json');
-        return $this->getPackage()->get();
-        die;
+        return new JsonResponse(json_decode($this->getPackage()->get()), 200, $headers = ['Content-Type' => 'application/json;charset=utf-8'], 0);
     }
 
     public function getRepoList(){
